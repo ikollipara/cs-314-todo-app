@@ -1,0 +1,11 @@
+{% extends "base.html" %} {% block content %}
+<main class="container">
+    {% include "todo/partials/navbar.html" %}
+    <h1>Create a new Todo</h1>
+    <form method="post">
+      {% csrf_token %}
+      {{ form }}
+      <button type="submit">Create</button>
+    </form>
+</main>
+{% endblock content %}

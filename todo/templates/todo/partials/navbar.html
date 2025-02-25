@@ -1,0 +1,8 @@
+<nav>
+  <strong>Todos</strong>
+  <ul>
+    <li><a href="{% url 'todo_list' %}">All Todos</a></li>
+    <li><a href="{% url 'todo_list' %}?incomplete=on">Incomplete Todos</a></li>
+    <li><a href="{% url 'todo_create' %}">Create a Todo</a></li>
+  </ul>
+</nav>

@@ -1,0 +1,11 @@
+{% extends "base.html" %} 
+{% block content %}
+<main class="container">
+  {% include "todo/partials/navbar.html" %}
+  <h1>{{ todo.title }}</h1>
+  {% if todo.is_complete %}
+  <span>{{ todo.completed_at }}</span>
+  {% endif %}
+  <p>{{ todo.description }}</p>
+</main>
+{% endblock content %}

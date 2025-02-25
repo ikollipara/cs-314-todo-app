@@ -1,0 +1,32 @@
+{% extends "base.html" %} 
+
+{% block content %}
+<main class="container">
+  {% include "todo/partials/navbar.html" %}
+  <h1>Todos</h1>
+  <form method="get">
+    <label>
+        <input type="checkbox" name="incomplete" id="" {% if incomplete %}checked{% endif %} />
+        Filter by Incomplete
+    </label>
+    <button type="submit">Filter</button>
+  </form>
+  <a href="{% url 'todo_create' %}">Create a new Todo</a>
+  <table>
+    <thead>
+        <tr>
+        <th>Title</th>
+        <th>Complete</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for todo in todos %}
+    <tr>
+     <td><a href="{% url 'todo_detail' todo.pk %}">{{ todo.title }}</a></td>
+     <td><input type="checkbox" disabled {% if todo.is_complete %}checked{% endif %}></td>
+    </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</main>
+{% endblock content %}
