@@ -6,4 +6,11 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "django>=5.1.6",
+    "django-allauth>=65.4.1",
+]
+
+[dependency-groups]
+dev = [
+    "coverage>=7.6.12",
+    "playwright>=1.50.0",
 ]
